@@ -4,13 +4,12 @@ import java.util.*;
 public class DiesSetmanaFitxer {
     public static void main(String[] args) throws IOException {
         try {
-            FileReader fr = new FileReader("Dies.txt");
-            int data = fr.read();
-            while (data != -1) {
-                System.out.println(data);
-                data = fr.read();
-                fr.close();
+            FileReader fr = new FileReader("src/Dies.txt");
+            int data;
+            while ((data=fr.read()) != -1) {
+                System.out.println((char)data);
             }
+            fr.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
