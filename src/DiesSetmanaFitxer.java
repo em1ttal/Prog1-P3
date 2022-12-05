@@ -4,7 +4,7 @@ import java.util.*;
 public class DiesSetmanaFitxer {
     public static void main(String[] args) throws IOException {
         try {
-            FileReader fr = new FileReader("Dies");
+            FileReader fr = new FileReader("Dies.txt");
             int data = fr.read();
             while (data != -1) {
                 System.out.println(data);
