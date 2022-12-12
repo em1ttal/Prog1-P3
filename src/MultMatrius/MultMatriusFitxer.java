@@ -2,7 +2,6 @@ package MultMatrius;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultMatriusFitxer {
@@ -16,8 +15,29 @@ public class MultMatriusFitxer {
             File file = new File(file_name);
             Scanner file_reader = new Scanner(file);
             String aux = file_reader.nextLine();
-            String[] dims = aux.split(" ");
-            int n = Integer.parseInt(dims[0]), m = Integer.parseInt(dims[1]), k = Integer.parseInt(dims[2]);
+            String[] num_holder = aux.split(" ");
+            int n = Integer.parseInt(num_holder[0]), m = Integer.parseInt(num_holder[1]), k = Integer.parseInt(num_holder[2]);
+            int[][] matrix1 = new int[n][m];
+            int[][] matrix2 = new int[m][k];
+            for (int i = 0; i < n; i++) {
+                aux = file_reader.nextLine();
+                num_holder = aux.split(" ");
+                for (int j = 0; j < m; j++)
+                    matrix1[i][j] = Integer.parseInt(num_holder[j]);
+            }
+            for (int i = 0; i < m; i++) {
+                aux = file_reader.nextLine();
+                num_holder = aux.split(" ");
+                for (int j = 0; j < k; j++)
+                    matrix2[i][j] = Integer.parseInt(num_holder[j]);
+            }
+            int[][] mult = multiplica(n,m,k,matrix1,matrix2);
+            System.out.println("La matriu resultant A * B es:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < k; j++)
+                    System.out.print(mult[i][j] + "  ");
+                System.out.println();
+            }
             file_reader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
