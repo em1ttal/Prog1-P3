@@ -33,7 +33,7 @@ public class DiesSetmanaFitxer {
              */
             while (data != -1) {
                 if (num_read != 0 && data != 32)
-                    printDay(Integer.parseInt(String.valueOf((char)data)));
+                    System.out.println(nomDiesSetmana(Integer.parseInt(String.valueOf((char)data))));
                 data = fr.read();
                 num_read++;
             }
@@ -45,16 +45,7 @@ public class DiesSetmanaFitxer {
         }
     }
 
-    static void printDay(int day) {
-        switch (day) {
-            case 1 -> System.out.print(Day.MONDAY + " ");
-            case 2 -> System.out.print(Day.TUESDAY + " ");
-            case 3 -> System.out.print(Day.WEDNESDAY + " ");
-            case 4 -> System.out.print(Day.THURSDAY + " ");
-            case 5 -> System.out.print(Day.FRIDAY + " ");
-            case 6 -> System.out.print(Day.SATURDAY + " ");
-            case 7 -> System.out.print(Day.SUNDAY + " ");
-            default -> System.out.print("Invalid day ");
-        }
+    static String nomDiesSetmana(int n) {
+        return Day.values()[n-1].toString();
     }
 }
