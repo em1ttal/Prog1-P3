@@ -19,10 +19,24 @@ public class ConjuntsFitxer {
             int[] b = new int[n];
             String aux = file_reader.nextLine();
             String[] aux_nums = aux.split(" ");
+            /*
+              Pone los valores del array a 'a'. Primero aux lee la linia entera, aux_nums separa los numeros usando los espacios entre numero
+              Primer(): a[0]
+              Siguente(): a[i+1]
+              Final(): a[last]
+              Recorregut
+             */
             for (int i = 0; i < aux_nums.length; i++)
                 a[i] = Integer.parseInt(aux_nums[i]);
             aux = file_reader.nextLine();
             aux_nums = aux.split(" ");
+            /*
+              Pone los valores del array a 'b'. Primero aux lee la linia entera, aux_nums separa los numeros usando los espacios entre numero
+              Primer(): b[0]
+              Siguente(): b[i+1]
+              Final(): b[last]
+              Recorregut
+             */
             for (int i = 0; i < aux_nums.length; i++)
                 b[i] = Integer.parseInt(aux_nums[i]);
             if(conjuntsIguals(a,b,n))
