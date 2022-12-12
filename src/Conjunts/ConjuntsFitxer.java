@@ -30,7 +30,7 @@ public class ConjuntsFitxer {
             else
                 System.out.println("No");
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");;
+            System.out.println("File not found");
         } catch (NumberFormatException e) {
             System.out.println("Incorrect type read");
         }
