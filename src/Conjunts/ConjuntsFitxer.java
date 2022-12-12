@@ -43,6 +43,7 @@ public class ConjuntsFitxer {
                 System.out.println("Si");
             else
                 System.out.println("No");
+            file_reader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (NumberFormatException e) {

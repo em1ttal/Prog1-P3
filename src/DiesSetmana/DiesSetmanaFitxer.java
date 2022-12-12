@@ -24,6 +24,13 @@ public class DiesSetmanaFitxer {
             FileReader fr = new FileReader(file_name);
             int data = fr.read();
             int num_read = 0;
+            /*
+              Lee los numeros hasta que no hay mas
+              Primer(): primera dia
+              Siguente(): dia i+1
+              Final(): ultimo dia
+              Cerca: Porque el bucle esta buscando para que el valor = -1 que significa fin de fichero
+             */
             while (data != -1) {
                 if (num_read != 0 && data != 32)
                     printDay(Integer.parseInt(String.valueOf((char)data)));
