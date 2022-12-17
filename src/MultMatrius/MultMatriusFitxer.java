@@ -2,6 +2,7 @@ package MultMatrius;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultMatriusFitxer {
@@ -19,25 +20,57 @@ public class MultMatriusFitxer {
             int n = Integer.parseInt(num_holder[0]), m = Integer.parseInt(num_holder[1]), k = Integer.parseInt(num_holder[2]);
             int[][] matrix1 = new int[n][m];
             int[][] matrix2 = new int[m][k];
+            /*
+              Lee las filas del matriz
+              Primer(): Sepera la primera fila a un array de strings despues de leerlo
+              Siguente(): Sepera fila++ a un array de strings despues de leerlo
+              Final(): Sepera la ultima fila a un array de strings despues de leerlo
+              Recorregut
+             */
             for (int i = 0; i < n; i++) {
                 aux = file_reader.nextLine();
                 num_holder = aux.split(" ");
+                /*
+                  Rellena la matriz
+                  Primer(): Primera columna de primer fila
+                  Siguente(): Columna++ de fila
+                  Final(): Ultima columna
+                  Recorregut
+                 */
                 for (int j = 0; j < m; j++)
                     matrix1[i][j] = Integer.parseInt(num_holder[j]);
             }
+            /*
+              Lee las filas del matriz
+              Primer(): Sepera la primera fila a un array de strings despues de leerlo
+              Siguente(): Sepera fila++ a un array de strings despues de leerlo
+              Final(): Sepera la ultima fila a un array de strings despues de leerlo
+              Recorregut
+             */
             for (int i = 0; i < m; i++) {
                 aux = file_reader.nextLine();
                 num_holder = aux.split(" ");
+                /*
+                  Rellena la matriz
+                  Primer(): Primera columna de primer fila
+                  Siguente(): Columna++ de fila
+                  Final(): Ultima columna
+                  Recorregut
+                 */
                 for (int j = 0; j < k; j++)
                     matrix2[i][j] = Integer.parseInt(num_holder[j]);
             }
             int[][] mult = multiplica(n,m,k,matrix1,matrix2);
             System.out.println("La matriu resultant A * B es:");
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < k; j++)
-                    System.out.print(mult[i][j] + "  ");
-                System.out.println();
-            }
+            /*
+              Imprime la matriz
+              Primer(): Primera fila de matriz
+              Siguente(): Fila++ de matriz
+              Final(): Ultima fila
+              Recorregut
+             */
+            for (int i = 0; i < n; i++)
+                System.out.println(Arrays.toString(mult[i]));
             file_reader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
