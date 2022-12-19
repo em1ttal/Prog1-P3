@@ -11,7 +11,7 @@ public class MillorsEstudiantsFitxer {
             File file = new File(file_name);
             Scanner file_reader = new Scanner(file);
             int k = Integer.parseInt(file_reader.nextLine());
-            String[] best = {file_reader.nextLine()};
+
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (NumberFormatException e) {
