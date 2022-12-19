@@ -7,11 +7,7 @@ import java.util.Scanner;
 
 public class MultMatriusFitxer {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Name of file: ");
-        String file_name = sc.nextLine();
-        //Puede ser que hay que quitar esa linia, dependiendo que como el IDE lee ficheros
-        file_name = "src/MultMatrius/" + file_name;
+        String file_name = "src/MultMatrius/Matrius.txt";
         try {
             File file = new File(file_name);
             Scanner file_reader = new Scanner(file);

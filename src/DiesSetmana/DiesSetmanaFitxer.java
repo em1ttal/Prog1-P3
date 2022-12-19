@@ -15,11 +15,7 @@ public class DiesSetmanaFitxer {
     }
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Name of file: ");
-        String file_name = sc.nextLine();
-        //Puede ser que hay que quitar esa linia, dependiendo que como el IDE lee ficheros
-        file_name = "src/DiesSetmana/" + file_name;
+        String file_name = "src/DiesSetmana/Dies.txt";
         try {
             FileReader fr = new FileReader(file_name);
             int data = fr.read();
