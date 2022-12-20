@@ -32,6 +32,7 @@ public class MillorsEstudiantsFitxer {
                 if (file_reader.hasNext())
                     file_reader.nextLine();
             }
+            file_reader.close();
             if (num_top > total_students)
                 System.out.println("EXCEPTION: More students wanted then students available");
             else {
@@ -39,6 +40,7 @@ public class MillorsEstudiantsFitxer {
                 file_to_write.write("Els " + num_top + " estudiants amb millor nota:\n");
                 for (int i = 0; i < num_top; i++)
                     file_to_write.write(names[i] + " " + grades[i] + "\n");
+                file_to_write.close();
                 System.out.println("Datos escrito al fichero " + file_name_write);
             }
         } catch (FileNotFoundException e) {
