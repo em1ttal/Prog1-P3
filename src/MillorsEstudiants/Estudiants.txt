@@ -1,5 +1,9 @@
-2
+4
 Joan 7.8
 Maria 9.5
 Carles 7
 Marta 8.6
+Eshaan 10
+Marc 8.4
+Santi 7.8
+Jan 7.6

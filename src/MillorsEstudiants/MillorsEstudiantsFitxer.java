@@ -26,7 +26,7 @@ public class MillorsEstudiantsFitxer {
                 aux_name = file_reader.next();
                 aux_grade = file_reader.nextFloat();
 
-                //TODO: If for changing grades
+                millorsEstudiants(names,grades,aux_name,aux_grade,num_top);
 
                 total_students++;
                 if (file_reader.hasNext())
@@ -39,6 +39,7 @@ public class MillorsEstudiantsFitxer {
                 file_to_write.write("Els " + num_top + " estudiants amb millor nota:\n");
                 for (int i = 0; i < num_top; i++)
                     file_to_write.write(names[i] + " " + grades[i] + "\n");
+                System.out.println("Datos escrito al fichero " + file_name_write);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
@@ -49,8 +50,20 @@ public class MillorsEstudiantsFitxer {
         }
     }
 
-    static int[] topIndices(float[] notes, int k) {
-        int[] a = {3,5};
-        return a;
+    static void millorsEstudiants(String[] names, float[] grades, String new_name, float new_grade, int size) {
+        boolean not_replaced = true;
+        for (int i = 0; i < size && not_replaced; i++) {
+            if (new_grade > grades[i]) {
+                String aux_name = new_name, aux2_name;
+                float aux_grade = new_grade, aux2_grade;
+                for (int j = i; j < size; j++) {
+                    aux2_name = names[j]; aux2_grade = grades[j];
+                    names[j] = aux_name; grades[j] = aux_grade;
+                    aux_name = aux2_name; aux_grade = aux2_grade;
+                }
+                not_replaced = false;
+            }
+        }
+
     }
 }
