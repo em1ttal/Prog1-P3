@@ -14,26 +14,16 @@ public class DiesSetmanaFitxer {
         SUNDAY
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String file_name = "src/DiesSetmana/Dies.txt";
+        int num_days;
         try {
-            FileReader fr = new FileReader(file_name);
-            int data = fr.read();
-            int num_read = 0;
-            /*
-              Lee los numeros hasta que no hay mas
-              Primer(): primera dia
-              Siguente(): dia i+1
-              Final(): ultimo dia
-              Cerca: Porque el bucle esta buscando para que el valor = -1 que significa fin de fichero
-             */
-            while (data != -1) {
-                if (num_read != 0 && data != 32)
-                    System.out.println(nomDiesSetmana(Integer.parseInt(String.valueOf((char)data))));
-                data = fr.read();
-                num_read++;
-            }
-            fr.close();
+            File file = new File(file_name);
+            Scanner file_reader = new Scanner(file);
+            num_days = file_reader.nextInt();
+            for (int i = 0; i < num_days; i++)
+                System.out.println(nomDiesSetmana(file_reader.nextInt()));
+            file_reader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         } catch (NumberFormatException e) {
