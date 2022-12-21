@@ -75,6 +75,15 @@ public class MultMatriusFitxer {
         }
     }
 
+    /**
+     * Multiplica las matrices
+     * @param n numero de filas de matriz 1
+     * @param m numero de columnas de matriz 1 y numero de filas de matriz 2
+     * @param k numero de columnas de matriz 2
+     * @param A matriz 1
+     * @param B matriz 2
+     * @return matrices multiplicadas
+     */
     static int[][] multiplica(int n, int m, int k, int[][] A, int[][] B) {
         int[][] multiplied = new int[n][k];
         /*

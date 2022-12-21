@@ -23,6 +23,12 @@ public class AdnIgualFitxer {
         }
     }
 
+    /**
+     * Misma secuencia?
+     * @param adn1 Primera secuencia
+     * @param adn2 Segunda secuencia
+     * @return Son lo mismo o no
+     */
     static boolean adnIguals(String[] adn1, String[] adn2) {
         if (adn1.length != adn2.length)
             return false;

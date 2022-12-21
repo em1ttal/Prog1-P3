@@ -39,6 +39,11 @@ public class DiesSetmanaFitxer {
         }
     }
 
+    /**
+     * Encuentra el dia que corresponde con el valor
+     * @param n Valor del dia
+     * @return Dia escrito o error si el valor es fuera del rango
+     */
     static String nomDiesSetmana(int n) {
         if (n > 7 || n < 1)
             return (n + " is out of range");
