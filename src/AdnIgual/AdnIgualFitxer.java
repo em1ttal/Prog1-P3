@@ -27,8 +27,22 @@ public class AdnIgualFitxer {
         if (adn1.length != adn2.length)
             return false;
         int n = adn1.length;
+        /*
+          Primer for encuentra donde empieza la secuencia
+          First(): index 0
+          Siguente(): index++
+          Final(): ultimo index
+          Recorregut
+         */
         for (int i = 0; i < n; i++) {
             boolean equal = true;
+            /*
+              Segundo for compreuba si la secuenica esta seguido, si no intenta empezar del siguente index
+              Primer(): Primera posicion en que la secuenica esta seguido
+              Siguente(): Pos++
+              Final(): Ultima posicion si la secuenica es lo mismo. O posicion en que n lo sigue
+              Recorregut o Cerca: Valores no son lo mismo
+             */
             for (int j = 0; j < n && equal; j++) {
                 if (!adn1[j].equals(adn2[(i+j)%n]))
                     equal = false;
