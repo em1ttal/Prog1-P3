@@ -21,6 +21,14 @@ public class DiesSetmanaFitxer {
             File file = new File(file_name);
             Scanner file_reader = new Scanner(file);
             num_days = file_reader.nextInt();
+            file_reader.nextLine();
+            /*
+              Mientras quedan numeros a leer, lo lee y imprime el dia correspondiente
+              Primer(): Primer numero
+              Siguente(): numero++
+              Final(): Ultimo numero
+              Recorregut
+             */
             for (int i = 0; i < num_days; i++)
                 System.out.println(nomDiesSetmana(file_reader.nextInt()));
             file_reader.close();
@@ -32,6 +40,9 @@ public class DiesSetmanaFitxer {
     }
 
     static String nomDiesSetmana(int n) {
+        if (n > 7 || n < 1)
+            return (n + " is out of range");
         return Day.values()[n-1].toString();
+
     }
 }
