@@ -1,0 +1,3 @@
+Els 2 estudiants amb millor nota:
+Maria 9.5
+Marta 8.6
